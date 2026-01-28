@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionHeading, Badge, Timeline } from "@/components";
 import { profile } from "@/data/profile";
 
@@ -52,7 +53,7 @@ const skillCategories = [
 
 export default function AboutPage() {
   return (
-    <main className="py-24">
+    <main className="min-h-screen bg-white py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-6">
         {/* Hero Section */}
         <div className="mb-20">
@@ -75,10 +76,15 @@ export default function AboutPage() {
                 {/* Avatar */}
                 <div className="relative mb-6">
                   <div className="h-40 w-40 overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-300 shadow-2xl ring-4 ring-white dark:from-zinc-700 dark:to-zinc-600 dark:ring-zinc-800">
-                    {/* Placeholder - reemplazar con tu imagen */}
-                    <div className="flex h-full items-center justify-center text-4xl">
-                      👨‍💻
-                    </div>
+                    {/* Tu imagen de perfil */}
+                    <Image
+                      src="/images/profile/Foto.jpg"
+                      alt="Patricio Arratia"
+                      width={160}
+                      height={160}
+                      className="h-full w-full object-cover"
+                      priority
+                    />
                   </div>
                   {/* Status indicator */}
                   <div className="absolute -bottom-2 -right-2 flex items-center gap-2 rounded-full bg-white px-3 py-1.5 shadow-lg dark:bg-zinc-800">

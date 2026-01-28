@@ -9,6 +9,7 @@ interface ProjectCardProps {
   technologies: string[];
   category: "web" | "mobile" | "ia" | "research";
   image?: string;
+  imageLayout?: "horizontal" | "vertical" | "auto";
   featured?: boolean;
 }
 
@@ -40,8 +41,11 @@ export function ProjectCard({
   technologies,
   category,
   image,
+  imageLayout = "auto",
   featured = false,
 }: ProjectCardProps) {
+  const isVertical = imageLayout === "vertical" || category === "mobile";
+  
   return (
     <Link href={`/projects/${slug}`} className="group block h-full">
       <article
@@ -64,13 +68,13 @@ export function ProjectCard({
         )}
 
         {/* Image Section */}
-        <div className={`relative h-48 w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
+        <div className={`relative ${isVertical ? "h-64" : "h-48"} w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
           {image ? (
             <Image
               src={image}
               alt={title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              className={`${isVertical ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
             />
           ) : (
             <div className="flex h-full items-center justify-center">

@@ -6,6 +6,8 @@ export interface Project {
   technologies: string[];
   featured: boolean;
   image?: string;
+  images?: string[];
+  imageLayout?: "horizontal" | "vertical" | "auto";
   // Case Study Details
   problem: string;
   solution: string;
@@ -21,10 +23,10 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "plataforma-asistente-ia",
-    title: "Plataforma Académica con Asistente IA",
+    slug: "cinap-asistente-ia",
+    title: "CINAP — Asistente IA para Asesorías",
     shortDescription:
-      "Sistema conversacional inteligente que automatiza la gestión académica integrando calendario, Telegram y transcripción de voz en tiempo real.",
+      "Plataforma web con IA conversacional que permite a docentes gestionar asesorías académicas mediante chat, voz y Telegram, con sincronización automática a Google Calendar.",
     category: "ia",
     technologies: [
       "Next.js",
@@ -39,6 +41,17 @@ export const projects: Project[] = [
       "Google Calendar",
     ],
     featured: true,
+    image: "/images/projects/Cinap/Home-Cinap.png",
+    imageLayout: "auto",
+    images: [
+      "/images/projects/Cinap/Home-Cinap.png",
+      "/images/projects/Cinap/Dashboard-Cinap.png",
+      "/images/projects/Cinap/ChatBot-Cinap.png",
+      "/images/projects/Cinap/ChatbotSi-Cinap.png",
+      "/images/projects/Cinap/Calendar-Cinap.png",
+      "/images/projects/Cinap/ListarTelegram-Cinap.jpg",
+      "/images/projects/Cinap/ReservaTelegram-Cinap.jpg",
+    ],
     problem:
       "La gestión académica tradicional fragmenta la información en múltiples herramientas desconectadas, generando fricción, duplicación de esfuerzos y pérdida de tiempo tanto para estudiantes como para docentes.",
     solution:
@@ -64,50 +77,58 @@ export const projects: Project[] = [
       "Redis es clave para mantener contexto conversacional entre sesiones",
       "El diseño modular facilita escalar componentes de forma independiente",
     ],
-    links: {
-      paper: "/docs/tesis.pdf",
-    },
+
   },
   {
-    slug: "cinap-microscopia-movil",
-    title: "CINAP — Microscopía Móvil",
+    slug: "medilab-microscopia",
+    title: "MediLab — Microscopía Móvil",
     shortDescription:
-      "Aplicación móvil que revoluciona el análisis microscópico en campo, permitiendo captura, procesamiento y medición automática de imágenes.",
+      "App móvil multiplataforma para la Facultad de Medicina que permite medir estructuras celulares mediante microscopía, desarrollada como parte del programa PID del CINAP - Universidad Católica de Temuco.",
     category: "mobile",
     technologies: [
       "Ionic",
       "Angular",
       "TypeScript",
       "OpenCV",
-      "Python",
-      "FastAPI",
+      "Capacitor",
     ],
     featured: true,
+    image: "/images/projects/MediLab/Home-MediLab.jpg",
+    imageLayout: "vertical",
+    images: [
+      "/images/projects/MediLab/Home-MediLab.jpg",
+      "/images/projects/MediLab/Vista-MediLab.jpg",
+      "/images/projects/MediLab/Medida-MediLab.jpg",
+      "/images/projects/MediLab/Calibrar-MediLab.jpg",
+      "/images/projects/MediLab/Historial-MediLab.jpg",
+      "/images/projects/MediLab/Manual-MediLab.jpg",
+    ],
     problem:
-      "Los investigadores del Centro CINAP dependían de equipos de laboratorio costosos y poco portables para realizar análisis microscópicos, limitando su capacidad de trabajo en terreno.",
+      "La Facultad de Medicina de la Universidad Católica de Temuco necesitaba una herramienta accesible para que estudiantes e investigadores pudieran medir estructuras celulares observadas mediante microscopía, sin depender de equipos de laboratorio costosos.",
     solution:
-      "Desarrollé una aplicación móvil híbrida que conecta con microscopios portátiles, captura imágenes en alta resolución y aplica algoritmos de visión por computador para medir estructuras automáticamente, todo desde un smartphone.",
+      "Diseñé y desarrollé MediLab, una aplicación móvil multiplataforma con herramientas de calibración dinámica y manual, procesamiento de imágenes y medición automatizada en micrómetros. El sistema utiliza escalas internas para estandarizar mediciones sin instrumentos externos.",
     architecture: `
-      App Móvil (Ionic/Angular)
-            ↓
-      Captura de Imagen HD
-            ↓
-      Procesamiento Local (OpenCV)
-            ↓
-      API Backend (FastAPI)
-            ↓
-      Almacenamiento + Análisis
+      App Móvil (Ionic + Angular)
+              ↓
+      Captura/Carga de Imagen
+              ↓
+      Calibración por Objetivos
+      (10x, 40x, 100x)
+              ↓
+      Procesamiento OpenCV
+              ↓
+      Medición en μm + Historial
     `,
     results: [
-      "95% de precisión en mediciones comparado con métodos tradicionales",
-      "Análisis que antes tomaban horas ahora se completan en minutos",
-      "Interfaz intuitiva validada con usuarios no técnicos",
-      "Modo offline con sincronización automática al reconectar",
+      "Mediciones precisas validadas por docentes e investigadores",
+      "Sistema de calibración por escalas internas sin instrumentos externos",
+      "Interfaz intuitiva validada en contextos reales de laboratorio",
+      "Proyecto enmarcado en el programa PID (Proyectos de Innovación en Docencia)",
     ],
     lessons: [
-      "El procesamiento híbrido (local + nube) optimiza rendimiento y batería",
-      "Las pruebas en contexto real son esenciales para una UX efectiva",
-      "La calibración automática del dispositivo mejora drásticamente la precisión",
+      "Las pruebas funcionales con usuarios reales son clave para la validación",
+      "La calibración automática mejora significativamente la precisión",
+      "El trabajo colaborativo con docentes enriquece el desarrollo técnico",
     ],
   },
 ];

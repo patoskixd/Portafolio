@@ -7,6 +7,7 @@ interface CallToActionProps {
   variant?: "primary" | "secondary" | "ghost";
   external?: boolean;
   download?: boolean;
+  className?: string;
 }
 
 export function CallToAction({
@@ -15,6 +16,7 @@ export function CallToAction({
   variant = "primary",
   external = false,
   download = false,
+  className = "",
 }: CallToActionProps) {
   const baseStyles =
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -29,7 +31,7 @@ export function CallToAction({
   };
 
   const linkProps = {
-    className: `${baseStyles} ${variantStyles[variant]}`,
+    className: `${baseStyles} ${variantStyles[variant]} ${className}`,
     ...(external && { target: "_blank", rel: "noopener noreferrer" }),
     ...(download && { download: true }),
   };

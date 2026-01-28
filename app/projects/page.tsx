@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <main className="py-24">
+    <main className="min-h-screen bg-white py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Mis Proyectos"
@@ -43,6 +43,7 @@ export default function ProjectsPage() {
                   technologies={project.technologies}
                   category={project.category}
                   image={project.image}
+                  imageLayout={project.imageLayout}
                   featured={true}
                 />
               ))}
@@ -73,6 +74,7 @@ export default function ProjectsPage() {
                   technologies={project.technologies}
                   category={project.category}
                   image={project.image}
+                  imageLayout={project.imageLayout}
                 />
               ))}
             </div>

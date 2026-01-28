@@ -6,3 +6,4 @@ export { PDFViewerLink } from "./PDFViewerLink";
 export { CallToAction } from "./CallToAction";
 export { Navbar } from "./Navbar";
 export { Footer } from "./Footer";
+export { ImageGallery } from "./ImageGallery";

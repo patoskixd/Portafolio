@@ -16,18 +16,37 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("loading");
 
-    // Simular envío (reemplazar con EmailJS o Resend)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setStatus("success");
-      setFormState({ name: "", email: "", message: "" });
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "17910fce-1b56-4e98-8925-09a628d995bc",
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+          subject: `Nuevo mensaje de ${formState.name} - Portafolio`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormState({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
   };
 
   return (
-    <main className="py-24">
+    <main className="min-h-screen bg-white py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-4xl px-6">
         <SectionHeading
           title="Hablemos"
@@ -208,7 +227,7 @@ export default function ContactPage() {
                       GitHub
                     </p>
                     <p className="font-medium text-zinc-900 dark:text-zinc-100">
-                      @tuusuario
+                      @patoskixd
                     </p>
                   </div>
                 </a>
@@ -233,7 +252,7 @@ export default function ContactPage() {
                       LinkedIn
                     </p>
                     <p className="font-medium text-zinc-900 dark:text-zinc-100">
-                      /in/tuusuario
+                      /in/patricio-arratia
                     </p>
                   </div>
                 </a>

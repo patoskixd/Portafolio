@@ -14,9 +14,9 @@ export const profile = {
   tagline: "Construyo plataformas web y soluciones de IA que transforman la educación",
   subtitle:
     "Especialista en desarrollo full-stack, automatización de procesos y sistemas conversacionales inteligentes. Enfocado en arquitecturas escalables y experiencias de usuario excepcionales.",
-  email: "patricio@email.com",
-  github: "https://github.com/patricioarratia",
-  linkedin: "https://linkedin.com/in/patricioarratia",
+  email: "patricio62014@gmail.com",
+  github: "https://github.com/patoskixd",
+  linkedin: "https://www.linkedin.com/in/patricio-arratia-78b70a29a/",
   cvUrl: "/docs/CV.pdf",
   
   highlights: [

@@ -12,7 +12,7 @@ export default function CertificatesPage() {
   const certifications = getCertificatesByCategory("certification");
 
   return (
-    <main className="py-24">
+    <main className="min-h-screen bg-white py-24 dark:bg-zinc-950">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Certificados"
