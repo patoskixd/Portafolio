@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { CallToAction, Badge, ProjectCard } from "@/components";
 import { profile } from "@/data/profile";
 import { getFeaturedProjects } from "@/data/projects";
@@ -76,31 +77,48 @@ const Icons = {
   ),
 };
 
-// Skill categories
+// Skill categories with SVG icons
 const skillCategories = [
   { 
     name: "Frontend", 
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Angular", "Ionic"],
     gradient: "from-blue-500 to-cyan-500",
-    icon: "🎨"
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
   },
   { 
     name: "Backend", 
     skills: ["FastAPI", "Python", "Node.js", "PostgreSQL", "Redis"],
     gradient: "from-green-500 to-emerald-500",
-    icon: "⚙️"
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+      </svg>
+    ),
   },
   { 
     name: "IA & ML", 
     skills: ["vLLM", "Qwen", "Whisper", "MCP", "LangChain"],
     gradient: "from-purple-500 to-pink-500",
-    icon: "🧠"
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
   },
   { 
     name: "DevOps", 
     skills: ["Docker", "Git", "Linux"],
     gradient: "from-orange-500 to-amber-500",
-    icon: "🚀"
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
   },
 ];
 
@@ -124,20 +142,36 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24">
         {/* Main content */}
         <div className="relative z-10 mx-auto max-w-5xl text-center">
-          {/* Availability Badge */}
-          <div className={`mb-8 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-4 py-2 shadow-sm transition-all duration-700 dark:border-zinc-800 dark:bg-zinc-900 ${mounted ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"}`}>
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
-            </span>
-            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-              Disponible para nuevos proyectos
-            </span>
+          {/* Profile Image */}
+          <div className={`-mt-6 mb-8 transition-all duration-700 sm:-mt-8 md:-mt-10 ${mounted ? "translate-y-0 opacity-100 scale-100" : "-translate-y-4 opacity-0 scale-95"}`}>
+            <div className="relative mx-auto">
+              {/* Glow effect - softened */}
+              <div className="absolute -inset-6 mx-auto h-40 w-40 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 opacity-15 blur-2xl sm:h-48 sm:w-48 md:h-56 md:w-56" />
+              {/* Image container */}
+              <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full border-4 border-white shadow-2xl ring-4 ring-violet-500/15 dark:border-zinc-800 dark:ring-violet-400/15 sm:h-44 sm:w-44 md:h-52 md:w-52">
+                <Image
+                  src="/images/profile/Foto.jpg"
+                  alt="Patricio Arratia"
+                  width={208}
+                  height={208}
+                  className="h-full w-full scale-110 object-cover object-top"
+                  priority
+                />
+              </div>
+              {/* Status indicator */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-lg dark:bg-zinc-800 sm:px-4 sm:py-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+                </span>
+                <span className="text-xs font-medium text-zinc-600 dark:text-zinc-300 sm:text-sm">Disponible</span>
+              </div>
+            </div>
           </div>
 
           {/* Greeting */}
           <p className={`mb-4 text-lg font-medium text-zinc-600 transition-all delay-100 duration-700 dark:text-zinc-400 ${mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
-            👋 ¡Hola! Soy
+             ¡Hola! Soy
           </p>
 
           {/* Name with gradient */}
@@ -151,9 +185,9 @@ export default function Home() {
           </p>
 
           {/* Typewriter effect */}
-          <div className={`mt-6 flex items-center justify-center gap-2 transition-all delay-[400ms] duration-700 ${mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
-            <span className="text-lg text-zinc-500 dark:text-zinc-500">Especializado en</span>
-            <span className="inline-block min-w-[280px] text-left text-lg font-semibold text-violet-600 dark:text-violet-400">
+          <div className={`mt-6 flex flex-col items-center justify-center gap-1 transition-all delay-[400ms] duration-700 sm:flex-row sm:gap-2 ${mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}>
+            <span className="text-base text-zinc-500 dark:text-zinc-500 sm:text-lg">Especializado en</span>
+            <span className="inline-block min-w-[200px] text-center text-base font-semibold text-violet-600 dark:text-violet-400 sm:min-w-[280px] sm:text-left sm:text-lg">
               {typedText}
               <span className="animate-blink ml-0.5 inline-block h-5 w-0.5 bg-violet-600 dark:bg-violet-400" />
             </span>
@@ -308,7 +342,9 @@ export default function Home() {
                 className="group rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="text-2xl">{category.icon}</span>
+                  <div className={`rounded-lg bg-gradient-to-br ${category.gradient} p-2 text-white`}>
+                    {category.icon}
+                  </div>
                   <h3 className={`bg-gradient-to-r ${category.gradient} bg-clip-text font-bold text-transparent`}>
                     {category.name}
                   </h3>

@@ -163,7 +163,7 @@ export function Timeline({ items }: TimelineProps) {
       <div className="relative mt-8 flex justify-center pl-16 sm:pl-0">
         <div className="absolute left-6 top-0 h-4 w-0.5 bg-gradient-to-b from-zinc-200 to-transparent dark:from-zinc-800 sm:left-[7.5rem]" />
         <div className="ml-0 rounded-full bg-zinc-100 px-4 py-2 text-xs font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400 sm:ml-12">
-          Inicio del camino 🚀
+          Inicio del camino
         </div>
       </div>
     </div>

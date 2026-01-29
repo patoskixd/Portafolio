@@ -8,7 +8,6 @@ const navigation = [
   { name: "Inicio", href: "/" },
   { name: "Sobre mí", href: "/about" },
   { name: "Proyectos", href: "/projects" },
-  { name: "Certificados", href: "/certificates" },
   { name: "Contacto", href: "/contact" },
 ];
 
@@ -49,7 +48,7 @@ export function Navbar() {
               Patricio Arratia
             </span>
             <span className="text-xs text-zinc-500 dark:text-zinc-400">
-              Ingeniero Informático
+              Ingeniero civil en Informática
             </span>
           </div>
         </Link>

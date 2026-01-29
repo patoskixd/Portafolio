@@ -236,6 +236,116 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Formación Académica Section */}
+        <section className="mb-20">
+          <div className="mb-8 flex items-center gap-3">
+            <div className="rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 p-3 shadow-lg">
+              <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+                Formación Académica
+              </h3>
+              <p className="text-zinc-500 dark:text-zinc-400">
+                Desarrollo profesional continuo y especialización
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {/* Curso Básico Habilitante */}
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-indigo-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900">
+              {/* Gradient accent */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-indigo-500 to-purple-500" />
+              
+              <div className="relative pl-4">
+                {/* Header */}
+                <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                      Curso Básico (Habilitante)
+                    </h4>
+                    <p className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
+                      Colegio de Ayudantes y Tutores — UCT
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400">
+                    Junio 2025
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  28 horas de formación enfocadas en comunicación efectiva, integración tecnológica en diseño, evaluación y retroalimentación, e innovación para el desarrollo estudiantil.
+                </p>
+
+                {/* Tags */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Comunicación
+                  </span>
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Tecnología Educativa
+                  </span>
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Innovación
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mención Investigación en Docencia */}
+            <div className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-emerald-200 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-900">
+              {/* Gradient accent */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-emerald-500 to-teal-500" />
+              
+              <div className="relative pl-4">
+                {/* Header */}
+                <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                      Mención Investigación en Docencia
+                    </h4>
+                    <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
+                      Colegio de Ayudantes y Tutores — UCT
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+                    Sept 2025
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  28 horas de formación en modalidad de autoaprendizaje, desarrollando competencias para fortalecer el perfil de Ayudantes y Tutores, promoviendo el crecimiento académico y apoyo estudiantil.
+                </p>
+
+                {/* Tags */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Investigación
+                  </span>
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Docencia
+                  </span>
+                  <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                    Mentoría
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Subtle note */}
+          <p className="mt-6 text-center text-sm text-zinc-500 dark:text-zinc-500">
+            Formación complementaria que fortalece habilidades de comunicación, trabajo en equipo y pensamiento crítico.
+          </p>
+        </section>
+
         {/* Timeline Section */}
         <section>
           <div className="mb-10 flex items-center gap-3">
