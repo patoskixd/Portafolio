@@ -68,14 +68,35 @@ export function ProjectCard({
         )}
 
         {/* Image Section */}
-        <div className={`relative ${isVertical ? "h-64" : "h-48"} w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
+        <div className={`relative ${isVertical ? "h-72" : "h-48"} w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
           {image ? (
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className={`${isVertical ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
-            />
+            isVertical ? (
+              /* Phone mockup for mobile projects */
+              <div className="flex h-full items-center justify-center py-4">
+                <div className="relative h-full w-auto">
+                  <div className="h-full overflow-hidden rounded-[1.5rem] border-[4px] border-zinc-300 bg-zinc-200 shadow-xl dark:border-zinc-600 dark:bg-zinc-700">
+                    <div className="relative h-full aspect-[9/19.5]">
+                      <Image
+                        src={image}
+                        alt={title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                  {/* Notch */}
+                  <div className="absolute left-1/2 top-1 h-2 w-8 -translate-x-1/2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+                </div>
+              </div>
+            ) : (
+              /* Regular image for non-mobile projects */
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            )
           ) : (
             <div className="flex h-full items-center justify-center">
               <div className="relative">

@@ -55,6 +55,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const config = categoryConfig[project.category];
+  const isMobile = project.category === "mobile";
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950">
@@ -177,17 +178,36 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             {/* Hero Image */}
             {project.image && (
-              <div className="relative">
+              <div className="relative flex justify-center">
                 <div className={`absolute -inset-4 rounded-3xl bg-gradient-to-r ${config.gradient} opacity-20 blur-2xl`} />
-                <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    className="h-auto w-full object-contain"
-                  />
-                </div>
+                {isMobile ? (
+                  /* Phone mockup for mobile projects */
+                  <div className="relative w-48 sm:w-56 md:w-64">
+                    <div className="overflow-hidden rounded-[2.5rem] border-[6px] border-zinc-800 bg-zinc-900 shadow-2xl ring-2 ring-zinc-700/50">
+                      <div className="relative aspect-[9/19.5]">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    {/* Notch */}
+                    <div className="absolute left-1/2 top-2 h-4 w-16 -translate-x-1/2 rounded-full bg-zinc-900" />
+                  </div>
+                ) : (
+                  /* Regular image for other projects */
+                  <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={800}
+                      height={600}
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -272,32 +292,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <p className="text-lg leading-relaxed text-green-800 dark:text-green-200">{project.solution}</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Architecture Section */}
-        <section className="mb-20">
-          <div className="mb-8 flex items-center gap-3">
-            <div className={`rounded-lg bg-gradient-to-r ${config.gradient} p-2`}>
-              <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
-            </div>
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-              Arquitectura del Sistema
-            </h2>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-950 shadow-2xl dark:border-zinc-800">
-            <div className="border-b border-zinc-800 px-4 py-3">
-              <div className="flex gap-2">
-                <div className="h-3 w-3 rounded-full bg-red-500" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                <div className="h-3 w-3 rounded-full bg-green-500" />
-              </div>
-            </div>
-            <pre className="overflow-x-auto p-8 text-base leading-relaxed text-zinc-300">
-              <code>{project.architecture}</code>
-            </pre>
           </div>
         </section>
 

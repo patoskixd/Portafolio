@@ -51,6 +51,8 @@ export const projects: Project[] = [
       "/images/projects/Cinap/Calendar-Cinap.png",
       "/images/projects/Cinap/ListarTelegram-Cinap.jpg",
       "/images/projects/Cinap/ReservaTelegram-Cinap.jpg",
+      "/images/projects/Cinap/ReservaTelegramText-Cinap.png",
+
     ],
     problem:
       "La gestión académica tradicional fragmenta la información en múltiples herramientas desconectadas, generando fricción, duplicación de esfuerzos y pérdida de tiempo tanto para estudiantes como para docentes.",
@@ -77,7 +79,9 @@ export const projects: Project[] = [
       "Redis es clave para mantener contexto conversacional entre sesiones",
       "El diseño modular facilita escalar componentes de forma independiente",
     ],
-
+    links: {
+      github: "https://github.com/patoskixd/Proyecto-Cinap",
+    },
   },
   {
     slug: "medilab-microscopia",
@@ -130,6 +134,9 @@ export const projects: Project[] = [
       "La calibración automática mejora significativamente la precisión",
       "El trabajo colaborativo con docentes enriquece el desarrollo técnico",
     ],
+    links: {
+      github: "https://github.com/patoskixd/Medicion-IMG",
+    },
   },
 ];
 
