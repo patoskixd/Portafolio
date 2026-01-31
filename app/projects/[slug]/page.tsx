@@ -197,15 +197,27 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     <div className="absolute left-1/2 top-2 h-4 w-16 -translate-x-1/2 rounded-full bg-zinc-900" />
                   </div>
                 ) : (
-                  /* Regular image for other projects */
-                  <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={800}
-                      height={600}
-                      className="h-auto w-full object-contain"
-                    />
+                  /* Safari browser mockup for web/ia projects */
+                  <div className="relative w-full max-w-2xl overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800 shadow-2xl">
+                    {/* Safari header bar */}
+                    <div className="flex h-8 items-center gap-2 border-b border-zinc-700 bg-zinc-800 px-3">
+                      {/* Traffic lights */}
+                      <div className="flex gap-1.5">
+                        <div className="h-3 w-3 rounded-full" style={{ backgroundColor: '#ff5f57' }} />
+                        <div className="h-3 w-3 rounded-full" style={{ backgroundColor: '#febc2e' }} />
+                        <div className="h-3 w-3 rounded-full" style={{ backgroundColor: '#28c840' }} />
+                      </div>
+                    </div>
+                    {/* Content */}
+                    <div className="relative">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={800}
+                        height={500}
+                        className="h-auto w-full object-cover"
+                      />
+                    </div>
                   </div>
                 )}
               </div>

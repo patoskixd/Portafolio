@@ -23,17 +23,20 @@ export const profile = {
     {
       icon: "code",
       title: "Desarrollo Full-Stack",
-      description: "Next.js · FastAPI · PostgreSQL",
+      description: "Creo aplicaciones web completas con arquitecturas modernas y escalables",
+      technologies: ["Next.js", "React", "FastAPI", "Django", "Node.js", "PostgreSQL", "Redis"],
     },
     {
       icon: "brain",
       title: "Inteligencia Artificial",
-      description: "LLMs · MCP · Whisper · vLLM",
+      description: "Implemento soluciones de IA conversacional y procesamiento de lenguaje natural",
+      technologies: ["vLLM", "Ollama", "Qwen3", "LangChain", "LangGraph", "FastMCP", "Whisper"],
     },
     {
       icon: "smartphone",
       title: "Aplicaciones Móviles",
-      description: "Ionic · Angular · Visión por Computador",
+      description: "Desarrollo apps multiplataforma con visión por computador integrada",
+      technologies: ["Ionic", "Flutter", "Angular", "OpenCV", "TypeScript"],
     },
   ],
 

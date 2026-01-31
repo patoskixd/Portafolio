@@ -77,71 +77,6 @@ const Icons = {
   ),
 };
 
-// Skill categories with SVG icons
-const skillCategories = [
-  { 
-    name: "Lenguajes", 
-    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL", "PHP", "R"],
-    gradient: "from-yellow-500 to-orange-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-      </svg>
-    ),
-  },
-  { 
-    name: "Frontend", 
-    skills: ["React", "Next.js", "Angular", "Ionic", "Tailwind CSS"],
-    gradient: "from-blue-500 to-cyan-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  { 
-    name: "Backend", 
-    skills: ["FastAPI", "Flask", "Django", "Laravel", "Node.js", "Firebase", "PostgreSQL", "MySQL", "Redis"],
-    gradient: "from-green-500 to-emerald-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-      </svg>
-    ),
-  },
-  { 
-    name: "Mobile", 
-    skills: ["Ionic", "Flutter", "Angular"],
-    gradient: "from-pink-500 to-rose-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  { 
-    name: "IA & ML", 
-    skills: ["vLLM", "Ollama", "Qwen3", "Whisper", "FastMCP", "LangGraph", "LangChain", "OpenCV"],
-    gradient: "from-purple-500 to-pink-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
-  },
-  { 
-    name: "Herramientas", 
-    skills: ["Git", "Docker", "VS Code", "RStudio", "Linux"],
-    gradient: "from-orange-500 to-amber-500",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-];
-
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
   const [mounted, setMounted] = useState(false);
@@ -265,38 +200,73 @@ export default function Home() {
 
       {/* Highlights Section */}
       <section className="relative py-24">
-        <div className="mx-auto max-w-6xl px-6">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-500/5 to-transparent dark:via-violet-500/10" />
+        
+        <div className="relative mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <span className="inline-block rounded-full bg-violet-100 px-4 py-1.5 text-sm font-semibold text-violet-700 dark:bg-violet-900/30 dark:text-violet-400">
+            <span className="inline-block rounded-full bg-gradient-to-r from-violet-500 to-purple-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/25">
               ¿Qué puedo hacer?
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+            <h2 className="mt-6 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
               Especialidades Técnicas
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
+              Áreas donde combino experiencia práctica con tecnologías de vanguardia
+            </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">
-            {profile.highlights.map((highlight, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
-              >
-                {/* Icon */}
-                <div className="relative mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-lg shadow-violet-500/25 transition-transform duration-300 group-hover:scale-110">
-                  {Icons[highlight.icon as keyof typeof Icons]}
+            {profile.highlights.map((highlight, index) => {
+              const gradients = [
+                "from-violet-500 to-purple-600",
+                "from-pink-500 to-rose-600",
+                "from-cyan-500 to-blue-600",
+              ];
+              const gradient = gradients[index % gradients.length];
+              
+              return (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-zinc-200/60 bg-gradient-to-br from-white via-white to-zinc-50 p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-zinc-700/60 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800"
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-[0.03]`} />
+                  
+                  {/* Decorative blur */}
+                  <div className={`absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-gradient-to-br ${gradient} opacity-10 blur-3xl transition-all duration-500 group-hover:opacity-20 group-hover:scale-110`} />
+
+                  {/* Icon */}
+                  <div className={`relative mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`}>
+                    {Icons[highlight.icon as keyof typeof Icons]}
+                  </div>
+
+                  <h3 className="relative mb-3 text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                    {highlight.title}
+                  </h3>
+                  <p className="relative mb-5 text-sm text-zinc-600 dark:text-zinc-400">
+                    {highlight.description}
+                  </p>
+
+                  {/* Technologies */}
+                  {'technologies' in highlight && (
+                    <div className="relative flex flex-wrap gap-2">
+                      {(highlight.technologies as string[]).map((tech) => (
+                        <span
+                          key={tech}
+                          className="inline-flex items-center rounded-lg border border-zinc-200 bg-white px-2.5 py-1 text-xs font-medium text-zinc-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-600"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Bottom border gradient */}
+                  <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${gradient} transition-all duration-500 group-hover:w-full`} />
                 </div>
-
-                <h3 className="relative mb-3 text-xl font-bold text-zinc-900 dark:text-zinc-100">
-                  {highlight.title}
-                </h3>
-                <p className="relative text-zinc-600 dark:text-zinc-400">
-                  {highlight.description}
-                </p>
-
-                {/* Bottom border gradient */}
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-violet-500 to-purple-500 transition-all duration-500 group-hover:w-full" />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -336,74 +306,6 @@ export default function Home() {
                 featured={true}
               />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-16 text-center">
-            <span className="inline-block rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25">
-              Stack Tecnológico
-            </span>
-            <h2 className="mt-6 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-              Tecnologías que Domino
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-              Herramientas y tecnologías que utilizo para crear soluciones robustas y escalables
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {skillCategories.map((category, index) => (
-              <div
-                key={category.name}
-                className="group relative overflow-hidden rounded-2xl border border-zinc-200/50 bg-gradient-to-br from-white to-zinc-50 p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl dark:border-zinc-700/50 dark:from-zinc-900 dark:to-zinc-800"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-5`} />
-                
-                {/* Header */}
-                <div className="relative mb-5 flex items-center gap-4">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}>
-                    {category.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-                      {category.name}
-                    </h3>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                      {category.skills.length} tecnologías
-                    </p>
-                  </div>
-                </div>
-
-                {/* Skills */}
-                <div className="relative flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skill}
-                      className={`inline-flex items-center rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-600`}
-                      style={{ animationDelay: `${skillIndex * 50}ms` }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Decorative corner */}
-                <div className={`absolute -bottom-2 -right-2 h-24 w-24 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 blur-2xl transition-opacity duration-500 group-hover:opacity-20`} />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 text-center">
-            <CallToAction href="/about" variant="secondary" className="group gap-2">
-              Conoce mi trayectoria
-              <span className="transition-transform duration-300 group-hover:translate-x-1">{Icons.arrow}</span>
-            </CallToAction>
           </div>
         </div>
       </section>

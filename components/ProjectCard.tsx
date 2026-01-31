@@ -68,7 +68,7 @@ export function ProjectCard({
         )}
 
         {/* Image Section */}
-        <div className={`relative ${isVertical ? "h-72" : "h-48"} w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
+        <div className={`relative h-72 w-full overflow-hidden bg-gradient-to-br ${categoryGradients[category]}`}>
           {image ? (
             isVertical ? (
               /* Phone mockup for mobile projects */
@@ -89,13 +89,31 @@ export function ProjectCard({
                 </div>
               </div>
             ) : (
-              /* Regular image for non-mobile projects */
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              /* Safari browser mockup for web/ia projects */
+              <div className="flex h-full items-center justify-center p-4">
+                <div className="relative h-full w-full max-w-[95%] overflow-hidden rounded-lg border border-zinc-300 bg-zinc-100 shadow-xl dark:border-zinc-600 dark:bg-zinc-800">
+                  {/* Safari header bar */}
+                  <div className="flex h-7 items-center gap-2 border-b border-zinc-200 bg-zinc-200 px-3 dark:border-zinc-700 dark:bg-zinc-700">
+                    {/* Traffic lights */}
+                    <div className="flex gap-1.5">
+                      <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#ff5f57' }} />
+                      <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#febc2e' }} />
+                      <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: '#28c840' }} />
+                    </div>
+                    {/* URL bar */}
+                    <div className="ml-2 flex-1" />
+                  </div>
+                  {/* Content */}
+                  <div className="relative h-[calc(100%-1.75rem)] w-full">
+                    <Image
+                      src={image}
+                      alt={title}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
             )
           ) : (
             <div className="flex h-full items-center justify-center">
