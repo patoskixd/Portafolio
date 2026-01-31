@@ -1,11 +1,6 @@
 import { SectionHeading, Badge, PDFViewerLink } from "@/components";
 import { certificates, getCertificatesByCategory } from "@/data/certificates";
 
-export const metadata = {
-  title: "Certificados | Portafolio",
-  description: "Mis certificados y cursos completados",
-};
-
 export default function CertificatesPage() {
   const diplomas = getCertificatesByCategory("diploma");
   const courses = getCertificatesByCategory("course");

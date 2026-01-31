@@ -2,13 +2,18 @@ import Image from "next/image";
 import { SectionHeading, Badge } from "@/components";
 import { profile } from "@/data/profile";
 
-export const metadata = {
-  title: "Sobre mí | Patricio Arratia",
-  description: "Ingeniero Civil en Informática especializado en desarrollo full-stack e inteligencia artificial.",
-};
-
 // Agrupar skills por categoría
 const skillCategories = [
+  {
+    name: "Lenguajes",
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+      </svg>
+    ),
+    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL", "PHP", "R"],
+    color: "from-yellow-500 to-orange-500",
+  },
   {
     name: "Frontend",
     icon: (
@@ -16,7 +21,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Angular"],
+    skills: ["React", "Next.js", "Angular", "Ionic", "Tailwind CSS"],
     color: "from-blue-500 to-cyan-500",
   },
   {
@@ -26,8 +31,18 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
       </svg>
     ),
-    skills: ["FastAPI", "Python", "Node.js", "PostgreSQL", "Redis"],
+    skills: ["FastAPI", "Flask", "Django", "Laravel", "Node.js", "Firebase", "PostgreSQL", "MySQL", "Redis"],
     color: "from-green-500 to-emerald-500",
+  },
+  {
+    name: "Mobile",
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ["Ionic", "Flutter", "Angular"],
+    color: "from-pink-500 to-rose-500",
   },
   {
     name: "IA & ML",
@@ -36,17 +51,18 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    skills: ["vLLM", "Qwen", "MCP", "Whisper", "OpenCV"],
+    skills: ["vLLM", "Ollama", "Qwen3", "Whisper", "FastMCP", "LangGraph", "LangChain", "OpenCV"],
     color: "from-purple-500 to-pink-500",
   },
   {
-    name: "Mobile & Tools",
+    name: "Herramientas",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    skills: ["Ionic", "Docker", "Git", "Linux"],
+    skills: ["Git", "Docker", "VS Code", "RStudio", "Linux"],
     color: "from-orange-500 to-amber-500",
   },
 ];
@@ -182,52 +198,63 @@ export default function AboutPage() {
 
         {/* Skills Section - Cards by Category */}
         <section className="mb-20">
-          <div className="mb-8 flex items-center gap-3">
-            <div className="rounded-xl bg-gradient-to-br from-zinc-200 to-zinc-300 p-3 dark:from-zinc-700 dark:to-zinc-600">
-              <svg className="h-6 w-6 text-zinc-600 dark:text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="mb-10 flex items-center gap-4">
+            <div className="rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 p-4 shadow-lg shadow-violet-500/25">
+              <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 sm:text-3xl">
                 Stack Tecnológico
               </h3>
               <p className="text-zinc-500 dark:text-zinc-400">
-                Tecnologías que domino y utilizo en mis proyectos
+                Tecnologías y herramientas que utilizo en mis proyectos
               </p>
             </div>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {skillCategories.map((category) => (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {skillCategories.map((category, index) => (
               <div
                 key={category.name}
-                className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:border-zinc-300 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
+                className="group relative overflow-hidden rounded-2xl border border-zinc-200/60 bg-gradient-to-br from-white via-white to-zinc-50 p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-zinc-700/60 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800"
               >
-                {/* Gradient background on hover */}
+                {/* Gradient overlay on hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
+                  className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 transition-opacity duration-500 group-hover:opacity-[0.03]`}
                 />
+
+                {/* Decorative blur */}
+                <div className={`absolute -bottom-4 -right-4 h-32 w-32 rounded-full bg-gradient-to-br ${category.color} opacity-10 blur-3xl transition-all duration-500 group-hover:opacity-20 group-hover:scale-110`} />
 
                 <div className="relative">
                   {/* Header */}
-                  <div className="mb-4 flex items-center gap-3">
+                  <div className="mb-5 flex items-center gap-4">
                     <div
-                      className={`rounded-lg bg-gradient-to-br ${category.color} p-2 text-white shadow-lg`}
+                      className={`flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${category.color} text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`}
                     >
                       {category.icon}
                     </div>
-                    <h4 className="font-bold text-zinc-900 dark:text-zinc-100">
-                      {category.name}
-                    </h4>
+                    <div>
+                      <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                        {category.name}
+                      </h4>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                        {category.skills.length} tecnologías
+                      </p>
+                    </div>
                   </div>
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary">
+                      <span
+                        key={skill}
+                        className="inline-flex items-center rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-600"
+                      >
                         {skill}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </div>

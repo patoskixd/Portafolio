@@ -1,12 +1,6 @@
 import { SectionHeading, ProjectCard } from "@/components";
 import { projects } from "@/data/projects";
 
-export const metadata = {
-  title: "Proyectos | Patricio Arratia",
-  description:
-    "Proyectos de desarrollo web, aplicaciones móviles e inteligencia artificial con impacto real.",
-};
-
 export default function ProjectsPage() {
   // Separar proyectos destacados
   const featuredProjects = projects.filter((p) => p.featured);

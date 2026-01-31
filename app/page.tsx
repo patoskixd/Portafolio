@@ -80,8 +80,18 @@ const Icons = {
 // Skill categories with SVG icons
 const skillCategories = [
   { 
+    name: "Lenguajes", 
+    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL", "PHP", "R"],
+    gradient: "from-yellow-500 to-orange-500",
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+      </svg>
+    ),
+  },
+  { 
     name: "Frontend", 
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Angular", "Ionic"],
+    skills: ["React", "Next.js", "Angular", "Ionic", "Tailwind CSS"],
     gradient: "from-blue-500 to-cyan-500",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +101,7 @@ const skillCategories = [
   },
   { 
     name: "Backend", 
-    skills: ["FastAPI", "Python", "Node.js", "PostgreSQL", "Redis"],
+    skills: ["FastAPI", "Flask", "Django", "Laravel", "Node.js", "Firebase", "PostgreSQL", "MySQL", "Redis"],
     gradient: "from-green-500 to-emerald-500",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,8 +110,18 @@ const skillCategories = [
     ),
   },
   { 
+    name: "Mobile", 
+    skills: ["Ionic", "Flutter", "Angular"],
+    gradient: "from-pink-500 to-rose-500",
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  { 
     name: "IA & ML", 
-    skills: ["vLLM", "Qwen", "Whisper", "MCP", "LangChain"],
+    skills: ["vLLM", "Ollama", "Qwen3", "Whisper", "FastMCP", "LangGraph", "LangChain", "OpenCV"],
     gradient: "from-purple-500 to-pink-500",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,8 +130,8 @@ const skillCategories = [
     ),
   },
   { 
-    name: "DevOps", 
-    skills: ["Docker", "Git", "Linux"],
+    name: "Herramientas", 
+    skills: ["Git", "Docker", "VS Code", "RStudio", "Linux"],
     gradient: "from-orange-500 to-amber-500",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -324,41 +344,57 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <span className="inline-block rounded-full bg-emerald-100 px-4 py-1.5 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
-              Tecnologías
+            <span className="inline-block rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25">
+              Stack Tecnológico
             </span>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-              Mi Stack Tecnológico
+            <h2 className="mt-6 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+              Tecnologías que Domino
             </h2>
-            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-              Las herramientas que uso para construir soluciones de calidad
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
+              Herramientas y tecnologías que utilizo para crear soluciones robustas y escalables
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {skillCategories.map((category) => (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {skillCategories.map((category, index) => (
               <div
                 key={category.name}
-                className="group rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
+                className="group relative overflow-hidden rounded-2xl border border-zinc-200/50 bg-gradient-to-br from-white to-zinc-50 p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl dark:border-zinc-700/50 dark:from-zinc-900 dark:to-zinc-800"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="mb-4 flex items-center gap-3">
-                  <div className={`rounded-lg bg-gradient-to-br ${category.gradient} p-2 text-white`}>
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-5`} />
+                
+                {/* Header */}
+                <div className="relative mb-5 flex items-center gap-4">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${category.gradient} text-white shadow-lg transition-transform duration-300 group-hover:scale-110`}>
                     {category.icon}
                   </div>
-                  <h3 className={`bg-gradient-to-r ${category.gradient} bg-clip-text font-bold text-transparent`}>
-                    {category.name}
-                  </h3>
+                  <div>
+                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                      {category.name}
+                    </h3>
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                      {category.skills.length} tecnologías
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
+
+                {/* Skills */}
+                <div className="relative flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skill}
-                      className="rounded-lg bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-600"
+                      className={`inline-flex items-center rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-600`}
+                      style={{ animationDelay: `${skillIndex * 50}ms` }}
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
+
+                {/* Decorative corner */}
+                <div className={`absolute -bottom-2 -right-2 h-24 w-24 rounded-full bg-gradient-to-br ${category.gradient} opacity-10 blur-2xl transition-opacity duration-500 group-hover:opacity-20`} />
               </div>
             ))}
           </div>
