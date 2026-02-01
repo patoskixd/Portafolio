@@ -58,9 +58,9 @@ export const projects: Project[] = [
 
     ],
     problem:
-      "La gestión académica tradicional fragmenta la información en múltiples herramientas desconectadas, generando fricción, duplicación de esfuerzos y pérdida de tiempo tanto para estudiantes como para docentes.",
+      "La gestión académica tradicional se apoya en flujos de trabajo mayoritariamente manuales y sistemas desacoplados, lo que provoca fragmentación de la información, duplicación de procesos y una carga operativa elevada para docentes y asesores.",
     solution:
-      "Diseñé e implementé una plataforma unificada con un asistente conversacional basado en IA que centraliza la gestión de calendario, envía notificaciones inteligentes por Telegram, transcribe mensajes de voz y responde consultas académicas de forma natural y contextual.",
+      "Diseñé e implementé una plataforma web modular y escalable con un asistente conversacional basado en inteligencia artificial, que centraliza la gestión de calendarios, automatiza notificaciones inteligentes vía Telegram, integra transcripción de voz y habilita la resolución contextual de consultas académicas.",
     architecture: `
       Frontend (Next.js) ↔ API Gateway (FastAPI)
                               ↓
@@ -72,15 +72,14 @@ export const projects: Project[] = [
                     PostgreSQL + Redis
     `,
     results: [
-      "60% menos tiempo en consultas administrativas repetitivas",
-      "Sistema estable con 100+ usuarios concurrentes sin degradación",
-      "Inferencia local en GPU con latencia promedio < 2 segundos",
-      "Integración fluida con Google Calendar y notificaciones Telegram",
+      "Experiencia de respuesta ágil con tiempos promedio inferiores a 2 segundos en interacciones con el asistente de IA.",
+      "Rendimiento validado por canal con mediciones de latencia en web, Telegram y procesamiento de voz bajo escenarios de concurrencia.",
+      "Sincronización automática con Google Calendar y notificaciones en tiempo real para confirmación y gestión de asesorías.",
     ],
     lessons: [
-      "La arquitectura MCP permite agregar nuevas capacidades sin modificar el core",
-      "Redis es clave para mantener contexto conversacional entre sesiones",
-      "El diseño modular facilita escalar componentes de forma independiente",
+      "La adopción de servidores MCP permitió separar la capa de razonamiento del modelo de la capa operativa, habilitando la integración de nuevas herramientas y servicios sin acoplar la lógica del agente a implementaciones específicas.",
+      "El uso de Redis como memoria de baja latencia permitió mantener contexto conversacional entre sesiones y estabilizar el sistema bajo escenarios de concurrencia multicanal.",
+      "La utilización de vLLM con batching continuo y GPU dedicada permitió reducir latencia y habilitar atención simultánea de usuarios en los canales web y Telegram.",
     ],
     links: {
       github: "https://github.com/patoskixd/Proyecto-Cinap",
@@ -90,7 +89,7 @@ export const projects: Project[] = [
     slug: "medilab-microscopia",
     title: "MediLab — Microscopía Móvil",
     shortDescription:
-      "App móvil multiplataforma para la Facultad de Medicina que permite medir estructuras celulares mediante microscopía, desarrollada como parte del programa PID del CINAP - Universidad Católica de Temuco.",
+      "App móvil para la Facultad de Medicina que permite medir estructuras celulares en micrómetros a partir de imágenes capturadas con teléfonos móviles, desarrollada como parte del programa PID del CINAP — Universidad Católica de Temuco.",
     category: "mobile",
     technologies: [
       "Ionic",
@@ -111,9 +110,9 @@ export const projects: Project[] = [
       "/images/projects/MediLab/Manual-MediLab.jpg",
     ],
     problem:
-      "La Facultad de Medicina de la Universidad Católica de Temuco necesitaba una herramienta accesible para que estudiantes e investigadores pudieran medir estructuras celulares observadas mediante microscopía, sin depender de equipos de laboratorio costosos.",
+      "La medición de estructuras microscópicas en la Facultad de Medicina dependía de microscopios con cámaras integradas, un equipamiento de alto costo y disponibilidad limitada, lo que restringía la práctica autónoma de los estudiantes y el acceso a herramientas de análisis fuera del laboratorio.",
     solution:
-      "Diseñé y desarrollé MediLab, una aplicación móvil multiplataforma con herramientas de calibración dinámica y manual, procesamiento de imágenes y medición automatizada en micrómetros. El sistema utiliza escalas internas para estandarizar mediciones sin instrumentos externos.",
+      "Diseñé y desarrollé una aplicación móvil multiplataforma que permite realizar mediciones microscópicas en micrómetros a partir de imágenes capturadas con teléfonos móviles. La plataforma integra selección interactiva de puntos, calibración automática basada en campo de visión y objetivo óptico, calibración manual mediante referencias conocidas, y un sistema de persistencia para el etiquetado, almacenamiento y visualización histórica de mediciones.",
     architecture: `
       App Móvil (Ionic + Angular)
               ↓
@@ -127,15 +126,15 @@ export const projects: Project[] = [
       Medición en μm + Historial
     `,
     results: [
-      "Mediciones precisas validadas por docentes e investigadores",
-      "Sistema de calibración por escalas internas sin instrumentos externos",
-      "Interfaz intuitiva validada en contextos reales de laboratorio",
-      "Proyecto enmarcado en el programa PID (Proyectos de Innovación en Docencia)",
+      "Mediciones microscópicas validadas en entornos académicos reales con retroalimentación docente.",
+      "Calibración óptica integrada basada en escalas internas, sin dependencia de instrumentos externos.s",
+      "Interfaz diseñada y evaluada en flujos reales de laboratorio para garantizar usabilidad y precisión operativa.",
+      "Proyecto enmarcado en el programa  Proyectos de Innovación en Docencia",
     ],
     lessons: [
-      "Las pruebas funcionales con usuarios reales son clave para la validación",
-      "La calibración automática mejora significativamente la precisión",
-      "El trabajo colaborativo con docentes enriquece el desarrollo técnico",
+      "La combinación de calibración automática por parámetros ópticos y calibración manual con referencias conocidas permitió mejorar la precisión y adaptabilidad del sistema a distintos dispositivos y configuraciones microscópicas.",
+      "La integración de OpenCV en una arquitectura móvil híbrida permitió ejecutar análisis y mediciones geométricas en tiempo real sin depender de infraestructura externa.",
+      "El diseño de un sistema de almacenamiento y etiquetado de mediciones habilitó la validación docente y la comparación histórica de resultados en contextos reales de laboratorio.",
     ],
     links: {
       github: "https://github.com/patoskixd/Medicion-IMG",

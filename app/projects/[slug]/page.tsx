@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Proyecto no encontrado" };
   return {
-    title: `${project.title} | Patricio Arratia`,
+    title: `${project.title} `,
     description: project.shortDescription,
   };
 }
