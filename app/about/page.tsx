@@ -5,24 +5,14 @@ import { profile } from "@/data/profile";
 // Agrupar skills por categoría
 const skillCategories = [
   {
-    name: "Lenguajes",
+    name: "IA & ML",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL", "PHP", "R"],
-    color: "from-yellow-500 to-orange-500",
-  },
-  {
-    name: "Frontend",
-    icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-    skills: ["React", "Next.js", "Angular", "Ionic", "Tailwind CSS"],
-    color: "from-blue-500 to-cyan-500",
+    skills: ["vLLM", "Ollama", "Qwen3", "Whisper", "FastMCP", "LangGraph", "LangChain", "OpenCV"],
+    color: "from-purple-500 to-pink-500",
   },
   {
     name: "Backend",
@@ -35,6 +25,16 @@ const skillCategories = [
     color: "from-green-500 to-emerald-500",
   },
   {
+    name: "Frontend",
+    icon: (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ["React", "Next.js", "Ionic", "Tailwind CSS"],
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
     name: "Mobile",
     icon: (
       <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,14 +45,12 @@ const skillCategories = [
     color: "from-pink-500 to-rose-500",
   },
   {
-    name: "IA & ML",
+    name: "Lenguajes",
     icon: (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
+      <span className="text-sm font-bold">&lt;/&gt;</span>
     ),
-    skills: ["vLLM", "Ollama", "Qwen3", "Whisper", "FastMCP", "LangGraph", "LangChain", "OpenCV"],
-    color: "from-purple-500 to-pink-500",
+    skills: ["Python", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"],
+    color: "from-yellow-500 to-orange-500",
   },
   {
     name: "Herramientas",
@@ -62,8 +60,8 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    skills: ["Git", "Docker", "VS Code", "RStudio", "Linux"],
-    color: "from-orange-500 to-amber-500",
+    skills: ["Git", "Docker", "VS Code", , "Linux"],
+    color: "from-slate-500 to-zinc-600",
   },
 ];
 
@@ -88,16 +86,16 @@ export default function AboutPage() {
 
             <div className="relative grid gap-10 lg:grid-cols-3">
               {/* Avatar & Quick Info */}
-              <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <div className="flex flex-col items-center text-center">
                 {/* Avatar */}
                 <div className="relative mb-6">
-                  <div className="h-40 w-40 overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-300 shadow-2xl ring-4 ring-white dark:from-zinc-700 dark:to-zinc-600 dark:ring-zinc-800">
+                  <div className="h-60 w-60 overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-200 to-zinc-300 shadow-2xl ring-4 ring-white dark:from-zinc-700 dark:to-zinc-600 dark:ring-zinc-800">
                     {/* Tu imagen de perfil */}
                     <Image
                       src="/images/profile/Foto.jpg"
                       alt="Patricio Arratia"
-                      width={160}
-                      height={160}
+                      width={240}
+                      height={240}
                       className="h-full w-full object-cover"
                       priority
                     />
@@ -134,7 +132,7 @@ export default function AboutPage() {
                   </div>
                   <div className="rounded-xl bg-white/80 p-4 text-center shadow-sm dark:bg-zinc-800/80">
                     <span className="block text-2xl font-bold text-zinc-900 dark:text-zinc-100">
-                      2025
+                      2026
                     </span>
                     <span className="text-xs text-zinc-500 dark:text-zinc-400">
                       Titulación
@@ -200,9 +198,7 @@ export default function AboutPage() {
         <section className="mb-20">
           <div className="mb-10 flex items-center gap-4">
             <div className="rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 p-4 shadow-lg shadow-violet-500/25">
-              <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+              <span className="text-xl font-mono font-bold text-white">&gt;_</span>
             </div>
             <div>
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 sm:text-3xl">

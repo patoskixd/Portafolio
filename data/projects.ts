@@ -23,10 +23,10 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "cinap-asistente-ia",
-    title: "CINAP — Asistente IA para Asesorías",
+    slug: "cinap-agente-conversacional-ia",
+    title: "CINAP — Agente Conversacional de IA para Gestión de Asesorías",
     shortDescription:
-      "Plataforma web con IA conversacional que permite a docentes gestionar asesorías académicas mediante chat, voz y Telegram, con sincronización automática a Google Calendar.",
+      "Plataforma web con un agente conversacional basado en IA que permite a docentes gestionar asesorías académicas mediante chat, voz y Telegram, con sincronización automática con Google Calendar.",
     category: "ia",
     technologies: [
       "Python",
@@ -71,16 +71,18 @@ export const projects: Project[] = [
                               ↓
                     PostgreSQL + Redis
     `,
-    results: [
-      "Experiencia de respuesta ágil con tiempos promedio inferiores a 2 segundos en interacciones con el asistente de IA.",
-      "Rendimiento validado por canal con mediciones de latencia en web, Telegram y procesamiento de voz bajo escenarios de concurrencia.",
-      "Sincronización automática con Google Calendar y notificaciones en tiempo real para confirmación y gestión de asesorías.",
+        results: [
+      "Latencia promedio < 2s en interacciones con el asistente de IA bajo concurrencia multicanal.",
+      "Rendimiento validado en web, Telegram y voz con estabilidad hasta 10 usuarios simultáneos.",
+      "Sincronización automática con Google Calendar y notificaciones en tiempo real para gestión de asesorías.",
     ],
     lessons: [
-      "La adopción de servidores MCP permitió separar la capa de razonamiento del modelo de la capa operativa, habilitando la integración de nuevas herramientas y servicios sin acoplar la lógica del agente a implementaciones específicas.",
-      "El uso de Redis como memoria de baja latencia permitió mantener contexto conversacional entre sesiones y estabilizar el sistema bajo escenarios de concurrencia multicanal.",
-      "La utilización de vLLM con batching continuo y GPU dedicada permitió reducir latencia y habilitar atención simultánea de usuarios en los canales web y Telegram.",
+      "Arquitectura MCP para desacoplar la capa de razonamiento del agente, permitiendo integrar nuevas herramientas sin modificar la lógica central.",
+      "Redis como memoria de baja latencia para persistir contexto conversacional entre sesiones y mantener estabilidad bajo concurrencia multicanal.",
+      "vLLM con batching continuo y GPU dedicada para reducir latencia de inferencia y habilitar atención simultánea en web y Telegram.",
     ],
+
+
     links: {
       github: "https://github.com/patoskixd/Proyecto-Cinap",
     },
@@ -112,7 +114,8 @@ export const projects: Project[] = [
     problem:
       "La medición de estructuras microscópicas en la Facultad de Medicina dependía de microscopios con cámaras integradas, un equipamiento de alto costo y disponibilidad limitada, lo que restringía la práctica autónoma de los estudiantes y el acceso a herramientas de análisis fuera del laboratorio.",
     solution:
-      "Diseñé y desarrollé una aplicación móvil multiplataforma que permite realizar mediciones microscópicas en micrómetros a partir de imágenes capturadas con teléfonos móviles. La plataforma integra selección interactiva de puntos, calibración automática basada en campo de visión y objetivo óptico, calibración manual mediante referencias conocidas, y un sistema de persistencia para el etiquetado, almacenamiento y visualización histórica de mediciones.",
+      "Desarrollé una aplicación móvil que transforma el teléfono en una herramienta de medición microscópica, integrando calibración óptica automática y manual, selección interactiva de puntos y un sistema de registro histórico para seguimiento y validación de resultados.",
+
     architecture: `
       App Móvil (Ionic + Angular)
               ↓
@@ -126,16 +129,17 @@ export const projects: Project[] = [
       Medición en μm + Historial
     `,
     results: [
-      "Mediciones microscópicas validadas en entornos académicos reales con retroalimentación docente.",
-      "Calibración óptica integrada basada en escalas internas, sin dependencia de instrumentos externos.s",
-      "Interfaz diseñada y evaluada en flujos reales de laboratorio para garantizar usabilidad y precisión operativa.",
-      "Proyecto enmarcado en el programa  Proyectos de Innovación en Docencia",
+      "Mediciones microscópicas validadas en entornos académicos reales.",
+      "Calibración óptica integrada sin dependencia de instrumentos externos.",
+      "Interfaz diseñada y evaluada en flujos reales de laboratorio para garantizar usabilidad y precisión.",
     ],
+
     lessons: [
-      "La combinación de calibración automática por parámetros ópticos y calibración manual con referencias conocidas permitió mejorar la precisión y adaptabilidad del sistema a distintos dispositivos y configuraciones microscópicas.",
-      "La integración de OpenCV en una arquitectura móvil híbrida permitió ejecutar análisis y mediciones geométricas en tiempo real sin depender de infraestructura externa.",
-      "El diseño de un sistema de almacenamiento y etiquetado de mediciones habilitó la validación docente y la comparación histórica de resultados en contextos reales de laboratorio.",
+      "Calibración automática y manual combinada para mejorar precisión y adaptabilidad entre distintos dispositivos.",
+      "Integración de OpenCV en arquitectura híbrida para análisis geométrico en tiempo real sin infraestructura externa.",
+      "Sistema de almacenamiento y etiquetado para validación docente y comparación histórica de resultados.",
     ],
+
     links: {
       github: "https://github.com/patoskixd/Medicion-IMG",
     },

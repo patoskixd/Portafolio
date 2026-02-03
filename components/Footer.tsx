@@ -88,8 +88,8 @@ export function Footer() {
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Construyendo soluciones tecnológicas que transforman ideas en realidad. 
-              Especializado en desarrollo web full-stack e inteligencia artificial.
+            Creo que la tecnología es mejor cuando se siente simple, útil y humana.
+            Cuando su propósito es facilitar la vida de las personas.
             </p>
 
             {/* Status Badge */}

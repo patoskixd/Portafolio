@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
           title="Mis Proyectos"
-          subtitle="Soluciones reales que combinan desarrollo full-stack, IA y experiencia de usuario"
+          subtitle="Desarrollo de soluciones digitales con enfoque en arquitectura, automatización e impacto en entornos reales."
         />
 
         {/* Featured Projects */}
