@@ -25,7 +25,6 @@ portafolio/
 │   ├── about/             # Sobre mí
 │   ├── projects/          # Proyectos
 │   │   └── [slug]/        # Detalle de proyecto
-│   ├── certificates/      # Certificados
 │   └── contact/           # Contacto
 ├── components/            # Componentes reutilizables
 │   ├── Badge.tsx
@@ -37,10 +36,9 @@ portafolio/
 │   └── Timeline.tsx
 ├── data/                  # Datos y contenido
 │   ├── profile.ts         # Información personal
-│   ├── projects.ts        # Proyectos
-│   └── certificates.ts    # Certificados
+│   └── projects.ts        # Proyectos
 └── public/
-    └── docs/              # CV, certificados PDF
+    └── images/            # Imágenes
 ```
 
 ## Stack Tecnológico
@@ -87,9 +85,6 @@ Edita `data/projects.ts` para agregar o modificar proyectos:
 - Problema → Solución → Resultados
 - Links a demos o repositorios
 
-### Certificados
-Edita `data/certificates.ts` para agregar certificaciones y cursos.
-
 ## Secciones
 
 | Sección | Descripción |
@@ -97,7 +92,6 @@ Edita `data/certificates.ts` para agregar certificaciones y cursos.
 | **Home** | Hero, highlights de especialización y proyectos destacados |
 | **Sobre mí** | Perfil profesional, skills por categoría y timeline interactivo |
 | **Proyectos** | Cards con case studies detallados (problema, solución, resultados) |
-| **Certificados** | Grid de certificaciones y cursos completados |
 | **Contacto** | Formulario de contacto y links a redes profesionales |
 
 ## Scripts Disponibles

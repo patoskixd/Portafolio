@@ -11,7 +11,6 @@ export interface Project {
   // Case Study Details
   problem: string;
   solution: string;
-  architecture: string;
   results: string[];
   lessons: string[];
   links?: {
@@ -61,17 +60,7 @@ export const projects: Project[] = [
       "La gestión académica tradicional se apoya en flujos de trabajo mayoritariamente manuales y sistemas desacoplados, lo que provoca fragmentación de la información, duplicación de procesos y una carga operativa elevada para docentes y asesores.",
     solution:
       "Diseñé e implementé una plataforma web modular y escalable con un asistente conversacional basado en inteligencia artificial, que centraliza la gestión de calendarios, automatiza notificaciones inteligentes vía Telegram, integra transcripción de voz y habilita la resolución contextual de consultas académicas.",
-    architecture: `
-      Frontend (Next.js) ↔ API Gateway (FastAPI)
-                              ↓
-                    Orquestador MCP
-                    /     |      \\
-              vLLM    Calendar   Telegram
-              (Qwen)   API        Bot
-                              ↓
-                    PostgreSQL + Redis
-    `,
-        results: [
+    results: [
       "Latencia promedio < 2s en interacciones con el asistente de IA bajo concurrencia multicanal.",
       "Rendimiento validado en web, Telegram y voz con estabilidad hasta 10 usuarios simultáneos.",
       "Sincronización automática con Google Calendar y notificaciones en tiempo real para gestión de asesorías.",
@@ -115,19 +104,6 @@ export const projects: Project[] = [
       "La medición de estructuras microscópicas en la Facultad de Medicina dependía de microscopios con cámaras integradas, un equipamiento de alto costo y disponibilidad limitada, lo que restringía la práctica autónoma de los estudiantes y el acceso a herramientas de análisis fuera del laboratorio.",
     solution:
       "Desarrollé una aplicación móvil que transforma el teléfono en una herramienta de medición microscópica, integrando calibración óptica automática y manual, selección interactiva de puntos y un sistema de registro histórico para seguimiento y validación de resultados.",
-
-    architecture: `
-      App Móvil (Ionic + Angular)
-              ↓
-      Captura/Carga de Imagen
-              ↓
-      Calibración por Objetivos
-      (10x, 40x, 100x)
-              ↓
-      Procesamiento OpenCV
-              ↓
-      Medición en μm + Historial
-    `,
     results: [
       "Mediciones microscópicas validadas en entornos académicos reales.",
       "Calibración óptica integrada sin dependencia de instrumentos externos.",
