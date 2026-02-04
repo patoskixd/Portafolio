@@ -62,6 +62,10 @@ cd portafolio
 # Instalar dependencias
 npm install
 
+# Configurar variables de entorno
+cp .env.local.example .env.local
+# Edita .env.local con tu API key de Web3Forms (https://web3forms.com)
+
 # Iniciar en desarrollo
 npm run dev
 ```
@@ -108,6 +112,13 @@ npm run lint     # Ejecutar linter
 El proyecto está optimizado para **Vercel**:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/patricioarratia/portafolio)
+
+**Importante**: Configura las variables de entorno en Vercel:
+1. Ve a Settings → Environment Variables
+2. Agrega `NEXT_PUBLIC_WEB3FORMS_KEY` con tu API key
+3. Aplica para Production, Preview y Development
+
+Ver [SECURITY.md](SECURITY.md) para más información sobre seguridad.
 
 ## Licencia
 

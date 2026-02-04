@@ -4,6 +4,14 @@ import { useState } from "react";
 import { SectionHeading, CallToAction } from "@/components";
 import { profile } from "@/data/profile";
 
+// Sanitización básica de inputs
+const sanitizeInput = (input: string): string => {
+  return input
+    .trim()
+    .replace(/[<>]/g, "") // Remover < y >
+    .slice(0, 1000); // Limitar longitud
+};
+
 export default function ContactPage() {
   const [formState, setFormState] = useState({
     name: "",
@@ -16,6 +24,19 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus("loading");
 
+    // Sanitizar inputs
+    const sanitizedData = {
+      name: sanitizeInput(formState.name),
+      email: sanitizeInput(formState.email),
+      message: sanitizeInput(formState.message),
+    };
+
+    // Validación básica
+    if (!sanitizedData.name || !sanitizedData.email || !sanitizedData.message) {
+      setStatus("error");
+      return;
+    }
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -24,11 +45,11 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "17910fce-1b56-4e98-8925-09a628d995bc",
-          name: formState.name,
-          email: formState.email,
-          message: formState.message,
-          subject: `Nuevo mensaje de ${formState.name} - Portafolio`,
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          name: sanitizedData.name,
+          email: sanitizedData.email,
+          message: sanitizedData.message,
+          subject: `Nuevo mensaje de ${sanitizedData.name} - Portafolio`,
         }),
       });
 
