@@ -26,7 +26,7 @@ export const projects: Project[] = [
     slug: "cinap-agente-conversacional-ia",
     title: "CINAP — Agente Conversacional de IA para Gestión de Asesorías",
     shortDescription:
-      "Plataforma web con un agente conversacional basado en IA que permite a docentes gestionar asesorías académicas mediante chat, voz y Telegram, con sincronización automática con Google Calendar.",
+      "Plataforma web con un agente conversacional basado en IA que permite a docentes gestionar asesorías académicas mediante chat, voz y Telegram, con sincronización automática con Google Calendar. Desarrollado como proyecto de título para la Universidad Católica de Temuco, en colaboración con CINAP.",
     category: "ia",
     technologies: [
       "Python",

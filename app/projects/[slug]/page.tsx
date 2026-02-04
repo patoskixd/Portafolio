@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950">
       {/* Hero Section with Gradient Background */}
-      <section className="relative overflow-hidden bg-zinc-950 pb-32 pt-24">
+      <section className="relative -mt-16 overflow-hidden bg-zinc-950 pb-32 pt-40">
         {/* Animated gradient background */}
         <div className={`absolute inset-0 bg-gradient-to-br ${config.gradient} opacity-10`} />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(0,0,0,0))]" />

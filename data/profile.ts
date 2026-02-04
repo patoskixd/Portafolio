@@ -11,7 +11,7 @@ export interface TimelineItem {
 export const profile = {
   name: "Patricio Arratia",
   role: "Ingeniero Civil en Informática",
-  tagline: "Construyo plataformas web y soluciones de IA que transforman la educación",
+  tagline: "Disfruto convertir problemas complejos en soluciones digitales que la gente realmente puede usar y entender",
   subtitle:
     "Especialista en desarrollo full-stack, automatización de procesos y sistemas conversacionales inteligentes. Enfocado en arquitecturas escalables y experiencias de usuario excepcionales.",
   email: "patricio62014@gmail.com",
@@ -40,9 +40,9 @@ export const profile = {
     },
   ],
 
-  about: `Soy Ingeniero Civil en Informática enfocado en crear soluciones digitales que generen impacto real y valor para las personas. Me especializo en el diseño y desarrollo de experiencias tecnológicas eficientes, centradas en el usuario y la innovación.
-
-Combino una sólida base técnica con una mentalidad creativa para abordar desafíos complejos desde una perspectiva estratégica y práctica. Busco oportunidades donde pueda seguir creciendo y aportar al desarrollo de soluciones que marquen una diferencia.`,
+  about: `Soy Ingeniero Civil en Informática y disfruto convertir problemas complejos en soluciones digitales que las personas puedan usar de manera simple y natural. Mi interés por la tecnología nació al ver cómo una herramienta bien diseñada puede cambiar la forma en que alguien aprende o trabaja.
+  
+        Hoy combino una base técnica sólida con una mentalidad creativa y estratégica para diseñar experiencias centradas en el usuario, buscando siempre un equilibrio entre rendimiento, claridad e impacto real. Me motiva seguir creciendo profesionalmente y aportar en proyectos donde la tecnología tenga un propósito más allá del código.`,
 
   skills: [
     // IA & ML

@@ -73,7 +73,7 @@ export default function AboutPage() {
         <div className="mb-20">
           <SectionHeading
             title="Sobre mí"
-            subtitle="Conoce quién soy, qué hago y cómo puedo aportar a tu equipo"
+            subtitle="Descubre quién soy, qué hago y cómo puedo aportar valor a tu equipo"
           />
         </div>
 

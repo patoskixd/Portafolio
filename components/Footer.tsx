@@ -185,7 +185,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-zinc-200 py-6 dark:border-zinc-800 sm:flex-row">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            © {currentYear} Patricio Arratia. Hecho con Next.js
+            © {currentYear} Patricio Arratia · Portafolio profesional
           </p>
 
           <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
